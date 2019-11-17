@@ -1,0 +1,15 @@
+<div class="form-signin">
+<h1 class="center h1 mb-3 font-weight-normal">Food sharing</h1>
+<h2 class=" center h2 mb-3 font-weight-normal">Login</h2>
+<%= form_with do |f| %>
+  <div>
+    <%= label_tag(:email, "Email ID", class: "sr-only") %>
+    <%= email_field(:user, :address, class: "form-control", placeholder: "Email", type: "email") %>
+  </div>
+  <div>
+    <%= label_tag(:password, "Password", class: "sr-only") %>
+    <%= password_field_tag(:user, :password, class: "form-control", placeholder: "Password") %>
+  </div>
+  <%= f.submit("Login", class: "btn btn-success btn-block btn-lg")%>
+<% end %>
+</div>

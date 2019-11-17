@@ -1,0 +1,13 @@
+<div>
+    <h1>Event details</h1>
+    <h2><%= @event.name %></h2>
+    <a href=<%="https://maps.google.com/?daddr=#{@event.location.lat},#{@event.location.lon}"%>>Open in google maps</a>
+    <p><%= @event.organizer.name %></p>
+    <p><%= @event.organizer.phone %></p>
+    <p><%= @event.organizer.email %></p>
+    <a href=<%="https://maps.google.com/?daddr=#{@event.organizer.location.lat},#{@event.organizer.location.lon}"%>>Address</a>
+    <% for food in @foods do %>
+        <p><%= food.estimated_qty %></p>    
+    <% end %>
+    
+</div>

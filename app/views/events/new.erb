@@ -1,0 +1,17 @@
+<div>
+<%= form_for(@event) do |f| %>
+  <div>
+    <%= label_tag(:name, "Name", class: "sr-only") %>
+    <%= text_area_tag(:name, class: "form-control") %>
+  </div>
+    <%= hidden_field_tag(:lat,"5") %>
+    <%= hidden_field_tag(:lon, "5") %>
+    <%= hidden_field_tag(:organizer, "1") %>
+  <div>
+
+    <%= number_field(:food, :estimated_qty, in: 50.0..2000.0, step: 10) %>
+    <%# <%= f.file_field :attachments, multiple: true, direct_upload: true %> %>
+  </div>
+  <%= f.submit("Add", class: "btn btn-success btn-block btn-lg")%>
+<% end %>
+</div>
