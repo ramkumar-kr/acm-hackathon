@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2019_11_16_234517) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "organizer_id"
     t.integer "distributor_id"
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_events_on_location_id"
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
   end
 
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_234517) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "events", "locations"
   add_foreign_key "events", "organizers"
   add_foreign_key "foods", "events"
   add_foreign_key "organizers", "locations"
